@@ -36,16 +36,7 @@ This software is provided free of change and without restriction under the [MIT 
 This package is installable through the Bower package manager.
 
 ```
-bower install angular-material-date-picker --save
-```
-
-In your `index.html` file, include the date picker module and style sheet
-
-```html
-<!-- style sheet -->
-<link href="bower_components/angular-material-date-picker/dist/am-date-picker.min.css" rel="stylesheet" type="text/css"/>
-<!-- module -->
-<script type="text/javascript" src="bower_components/angular-material-date-picker/dist/am-date-picker.min.js"></script>
+npm install am-date-picker --save
 ```
 
 Include the `am.date-picker` module as a dependency in your application.
@@ -59,6 +50,9 @@ angular.module('myApp', ['ngMaterial', 'am.date-picker']);
 **controller**
 
 ```javascript
+
+require("am-date-picker");
+
 angular
     .module('myApp', [
         'ngMaterial',

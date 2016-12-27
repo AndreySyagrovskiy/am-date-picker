@@ -1,11 +1,10 @@
 {
-  "version": "0.2.0",
-  "private": true,
-  "name": "angular-material-datepicker",
+  "version": "0.2.3",
+  "name": "am-date-picker",
   "description": "Simple datepicker based on angular material framework",
+  "main": "src/js/index.js",
   "license": "MIT",
   "devDependencies": {
-    "bower": "^1.3.1",
     "gulp": "^3.9.0",
     "gulp-angular-templatecache": "^1.8.0",
     "gulp-clean": "^0.3.1",
@@ -26,7 +25,6 @@
     "tmp": "0.0.28"
   },
   "scripts": {
-    "postinstall": "bower install",
     "prestart": "npm install",
     "start": "http-server -a 0.0.0.0 -p 8000",
     "pretest": "npm install",
@@ -40,5 +38,8 @@
     "preversion": "npm test -- --single-run",
     "version": "gulp clean-build && git add -A dist",
     "postversion": "git push && git push --tags"
+  },
+  "dependencies": {
+    "angular": "^1.6.1"
   }
 }
