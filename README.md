@@ -1,4 +1,4 @@
-# Material Design Date Picker
+# Material Design Date Picker - npm adaptation
 
 ![Date picker image](demo/images/picker.png?raw=true "Title")
 
