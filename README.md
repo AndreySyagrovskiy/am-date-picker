@@ -65,7 +65,16 @@ angular
             calendarIcon: '/static/images/icons/ic_today_24px.svg',
             clearIcon: '/static/images/icons/ic_close_24px.svg',
             nextIcon: '/static/images/icons/ic_chevron_right_18px.svg',
-            prevIcon: '/static/images/icons/ic_chevron_left_18px.svg'
+            prevIcon: '/static/images/icons/ic_chevron_left_18px.svg',
+            inputPipe: (formatedSstring, date) =>{
+                let daysFromNow = moment().diff(date, 'days');
+
+                if(daysFromNow > -2 && daysFromNow < 2){
+                    return moment().calendar(date);
+                } else {
+                    return formatedSstring;
+                }
+            }
         })
     }])
     .controller('MainCtrl', ['$scope', function ($scope) {
@@ -89,6 +98,7 @@ angular
                 am-min-year="2000"
                 am-popup-date-format="D/M"
                 am-today-button="Today"
+                am-input-filer="functFilter"
                 am-show-input-icon="true">
 </am-date-picker>
 ```
@@ -132,7 +142,6 @@ All settings can be provided as attributes in the `am-date-picker` or globally c
 | `am-show-input-icon`   | `boolean`     | Whether to display the calendar icon (default: `false`). |
 | `am-today-button`      | `String`      | The text for today button. If not provided the button won't be shown. |
 
-
 Specific settings that can be globally configured through the `amDatePickerConfig` only.
 
 | Attribute              | Type          | Description |
@@ -141,6 +150,7 @@ Specific settings that can be globally configured through the `amDatePickerConfi
 | `clearIcon`            | `String`      | Path to the clear icon. |
 | `nextIcon`             | `String`      | Path to the chevron right icon. |
 | `prevIcon`             | `String`      | Path to the chevron left icon. |
+| `inputPipe`            | `Function`    | Can change defaul display view |
 
 > Date formats and locale should correspond MomentJS ones.
 
