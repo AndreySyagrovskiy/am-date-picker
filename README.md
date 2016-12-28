@@ -52,6 +52,7 @@ angular.module('myApp', ['ngMaterial', 'am.date-picker']);
 ```javascript
 
 require("am-date-picker");
+require("am-date-picker/dist/am-date-picker.min.css");
 
 angular
     .module('myApp', [

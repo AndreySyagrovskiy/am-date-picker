@@ -1,8 +1,8 @@
 {
-  "version": "0.2.3",
+  "version": "0.2.9",
   "name": "am-date-picker",
   "description": "Simple datepicker based on angular material framework",
-  "main": "src/js/index.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.0",
@@ -37,7 +37,8 @@
     "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + cat('bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\"",
     "preversion": "npm test -- --single-run",
     "version": "gulp clean-build && git add -A dist",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "prepublish": "gulp"
   },
   "dependencies": {
     "angular": "^1.6.1"
