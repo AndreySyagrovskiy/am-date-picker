@@ -118,7 +118,8 @@
                 },
                 parent: angular.element(document.body),
                 targetEvent: ev,
-                templateUrl: 'am-date-picker_content.tmpl.html'
+                templateUrl: 'am-date-picker_content.tmpl.html',
+                clickOutsideToClose: true
             }).then(function (selectedDate) {
                 amDatePicker.ngModelCtrl.$setViewValue(selectedDate);
                 amDatePicker.ngModelCtrl.$setTouched();
